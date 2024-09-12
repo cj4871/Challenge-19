@@ -11,7 +11,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -19,18 +19,18 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.html'
+        template: './index.html',
       }),
     ],
 
     module: {
       rules: [
         {
-          test: /.css$/i,
+          test: /\.css$/i,
           use: ['style-loader','css-loader'],
         },
         {
-          test: /.m?js$/i,
+          test: /\.m?js$/,
           exclude: /node_modules/,
           use:{
             loader: 'babel-loader',
